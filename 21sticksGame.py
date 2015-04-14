@@ -31,7 +31,7 @@ while matchsticks > 0 :
    printsticks(matchsticks)
    playerPick = input("Pick 1 to 4 sticks from stack: ")
    while playerPick > 4:
-      playerPick = input("You dumbfuck idiot, didnt i ask you to pick number between 1 to 4 sticks from stack. Do it again: ")
+      playerPick = input("Dear Einstein, didnt i ask you to pick number between 1 to 4 sticks from stack? Do it again: ")
    matchsticks = matchsticks - playerPick
    if matchsticks == 1:
       print "you won"
