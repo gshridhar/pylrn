@@ -40,8 +40,8 @@ one = "7316717653133062491922511967442657474235534919493496983520312774506326239
 mul1 = 1
 mul2 = 1
 
-for i in range(len(one) - 10):
-   for j in range(i, i + 10):
+for i in range(len(one) - 13):
+   for j in range(i, i + 13):
       mul1 *=  int(one[j])
    if mul1 > mul2:
       mul2 = mul1
