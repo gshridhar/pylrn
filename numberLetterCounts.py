@@ -25,26 +25,51 @@ dictionary2 = {2: 'twenty', 3:'thirty', 4: 'forty', 5:'fifty', 6:'sixty', 7:'sev
 
 counter = 0
 
-#for i in range(1,20):
-#   print dictionary1[i]
-#   counter += len(dictionary1[i])
-#emplist = []
-
+"""
+Following block will count for 01 to 20
+"""
+for i in range(1,20):
+   print dictionary1[i]
+   counter += len(dictionary1[i])
 emplist = []
-for i in range(198,235):
+"""
+Following block will count for 20 to 99
+"""
+for i in range(20,100):
    for j in range(len(str(i))):
       emplist.append(str(i)[j])
-#   print emplist
-   if emplist[2] != '0' and emplist[1] >= '2':
-      print dictionary1[int(emplist[0])], 'hundred and', dictionary2[int(emplist[1])], dictionary1[int(emplist[2])], emplist
-   elif emplist[1] == '0'and emplist[2] == '0': 
-      print dictionary1[int(emplist[0])], 'hundred', emplist
-   elif emplist[1] == '1'and emplist[2] == '0':                   # for 10 
-      print dictionary1[int(emplist[0])], 'hundred and', dictionary1[10], emplist
-   elif emplist[1] != '0'and emplist[2] == '0':                    # for 20s 30s 40s and so on
-      print dictionary1[int(emplist[0])], 'hundred and', dictionary2[int(emplist[1])], emplist
-   elif emplist[1] >= '0'and emplist[2] != '0':                     # for first 19 numbers  in any hundred
-      print dictionary1[int(emplist[0])], 'hundred and', dictionary1[int(emplist[1]+emplist[2])], emplist
+   if emplist[1] == '0':
+      print dictionary2[int(emplist[0])], emplist
+      counter +=  len(dictionary2[int(emplist[0])])
+   else:
+      print dictionary2[int(emplist[0])], dictionary1[int(emplist[1])], emplist
+      counter += len(dictionary2[int(emplist[0])]) + len(dictionary1[int(emplist[1])])
    emplist = []
 
+"""
+Following block will count for 100 to 999
+"""
+emplist = []
+for i in range(100,1000):
+   for j in range(len(str(i))):
+      emplist.append(str(i)[j])
+   if emplist[2] != '0' and emplist[1] >= '2':
+      print dictionary1[int(emplist[0])], 'hundred and', dictionary2[int(emplist[1])], dictionary1[int(emplist[2])], emplist
+      counter += len(dictionary1[int(emplist[0])]) + 10 + len(dictionary2[int(emplist[1])]) + len(dictionary1[int(emplist[2])])
+   elif emplist[1] == '0'and emplist[2] == '0': 
+      print dictionary1[int(emplist[0])], 'hundred', emplist
+      counter += len(dictionary1[int(emplist[0])]) + len('hundred') 
+   elif emplist[1] == '1'and emplist[2] == '0':                   # for 10 
+      print dictionary1[int(emplist[0])], 'hundred and', dictionary1[10], emplist
+      counter += len(dictionary1[int(emplist[0])]) + 10 + len( dictionary1[10])
+   elif emplist[1] != '0'and emplist[2] == '0':                    # for 20s 30s 40s and so on
+      print dictionary1[int(emplist[0])], 'hundred and', dictionary2[int(emplist[1])], emplist
+      counter += len(dictionary1[int(emplist[0])]) + 10 + len(dictionary2[int(emplist[1])])
+   elif emplist[1] >= '0'and emplist[2] != '0':                     # for first 19 numbers  in any hundred
+      print dictionary1[int(emplist[0])], 'hundred and', dictionary1[int(emplist[1]+emplist[2])], emplist
+      counter += len(dictionary1[int(emplist[0])]) + 10 + len(dictionary1[int(emplist[1]+emplist[2])])
+   emplist = []
+
+print "One Thousand" # for thousandth number
+counter += len('onethousand')   #  This one is make up for silly mistake of counting that space between two words
 print counter
