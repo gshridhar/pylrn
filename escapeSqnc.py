@@ -14,7 +14,18 @@ I'll do a list:
 \t* Catnip\n\t* Grass
 """
 
-print tabby_cat
-print persian_cat
+fat_cat2 = '''
+I'll do a list:
+\t* Cat food
+\t* Fishes
+\t* Catnip\n\t* Grass
+'''
+
+"""
+When %r is used then it prints out the raw representation of what I typed, which is goint to include the original escape sequences. Use %s instead. Always remember this: %r is for debugging, %s is for displaying.
+"""
+print "%r" % tabby_cat
+print '%r' % persian_cat
 print backslash_cat
-print fat_cat
+print '%r' % fat_cat
+print "%r" % fat_cat2
