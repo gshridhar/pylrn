@@ -3,7 +3,7 @@
 # Date: 14th August 2015
 # Subject: Exercises for "while" loop
 
-def myfunction(limit):
+def myfunction(limit,incrementer):
    i = 0
    numbers = []
 
@@ -11,14 +11,14 @@ def myfunction(limit):
       print "At the top i is %d" % i
       numbers.append(i)
 
-      i = i+ 1
+      i = i+ incrementer
       print "Numbers now: ", numbers
       print "At the bottom i is %d" % i
 
    print "The numbers: "
    return numbers
 
-callnumber = myfunction(8)
+callnumber = myfunction(9,2)
 
 for num in callnumber:
    print num
