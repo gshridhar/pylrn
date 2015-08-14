@@ -17,6 +17,7 @@ def gold_room():
 
    if how_much < 50:
       print "Nice, you're not greedy, you win!"
+      """ On many operating system a program can abort with exit(0), and the number passed in will indicate an error or not. If you do exit(1) then it will be an error, but exit(0) will be a good exit. The reason it's backward from normal boolean logic (with 0==False is that you can use different numbers to indicate different error results. You can do exit(100) for a different error result than exit(2) or exit(1)."""
       exit(0)
    else:
       dead("You greedy bastard!")
@@ -60,7 +61,7 @@ def cthulhu_room():
       cthulhu_room()
 
 def dead(why):
-   print why, "Good, job!"
+   print why, "Good job!"
    exit(0)
 
 def start():
