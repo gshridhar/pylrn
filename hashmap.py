@@ -1,10 +1,10 @@
 #!/usr/bin/python
 # Author: shridhar gadekar
 # Date: 15th August 2015
-# Subject: Exercises for creating own dictionary module
+# Subject: creating own dictionary module
 
 
-def new(num_nuckets=256):
+def new(num_buckets=256):
    """Initializes a Map with the given number of buckets."""
    aMap = []
    for i in range(0, num_buckets):
@@ -13,7 +13,7 @@ def new(num_nuckets=256):
 
 def hash_key(aMap, key):
    """Given a key this will create a number and then convert it to an index for the aMap's buckets."""
-   return hash(key) % len(map)
+   return hash(key) % len(aMap)
 
 def get_bucket(aMap, key):
    """Given a key, find the bucket where it would go."""
