@@ -22,3 +22,5 @@ import subprocess
 os.system('ls')
 
 subprocess.call(["ls", "-l"])
+
+subprocess.call(["/usr/bin/systemctl", "status", "sssd.service"])
